@@ -1,8 +1,9 @@
 on:
   issues:
-    types: [opened]
+    types: [labeled]
 jobs:
   checkSubmissionIssueTitle:
+    if: ${{ github.event.label.name == 'submission' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
