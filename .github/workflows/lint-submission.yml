@@ -12,7 +12,7 @@ jobs:
           issue-number: 1
           body: |
             The issue title must start with [Submission]
-      - if: github.event.issue.title == '[Submission] <fill project's name>'
+      - if: startsWith(github.event.issue.title, '[Submission] <fill project's name>') == 'true'
         name: Check Issue title format
         uses: peter-evans/create-or-update-comment@v1
         with:
