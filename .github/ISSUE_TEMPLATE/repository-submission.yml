@@ -2,7 +2,7 @@ name: Submit an open-source project
 description: Repository submission made easy!
 labels: [submission]
 
-title: "[Submission] <fill project's name>"
+title: "[Submission] <fill project name>"
 
 body:
 - type: input
