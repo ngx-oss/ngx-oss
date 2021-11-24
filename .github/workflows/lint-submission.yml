@@ -29,5 +29,5 @@ jobs:
         with:
           issue-number: ${{ github.event.issue.number }}
           body: |
-            Thanks @{{github.event.issue.user.login}} for submitting ${{ steps.issue-parser.outputs.jsonString.url}}
+            Thanks @${{github.event.issue.user.login}} for submitting ${{ steps.issue-parser.outputs.url}}
       
