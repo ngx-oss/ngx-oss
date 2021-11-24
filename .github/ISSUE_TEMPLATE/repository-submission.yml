@@ -1,0 +1,13 @@
+name: Submit an open-source project
+description: Repository submission made easy!
+labels: [submission]
+
+title: "[Submission] <fill project's name>"
+
+body:
+- type: input
+  id: url
+  attributes:
+    label: GitHub repository URL
+  validations:
+    required: true
