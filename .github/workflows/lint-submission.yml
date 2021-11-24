@@ -30,4 +30,8 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             Thanks @${{github.event.issue.user.login}} for submitting ${{ steps.issue-parser.outputs.issueparser_url}}
-      
+      - name: Review submission
+        uses: ngx-oss/gh-submission-review@v1
+        with:
+          url: ${{ steps.issue-parser.outputs.issueparser_url}}
+          token: ${{ secrets.GITHUB_TOKEN }}
