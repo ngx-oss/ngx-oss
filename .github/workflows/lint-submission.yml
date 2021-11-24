@@ -5,6 +5,7 @@ jobs:
   checkSubmissionIssueTitle:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - if: startsWith(github.event.issue.title, '[Submission]') != 'true'
         name: Check Issue title prefix
         uses: peter-evans/create-or-update-comment@v1
