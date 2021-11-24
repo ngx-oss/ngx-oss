@@ -19,3 +19,14 @@ jobs:
           issue-number: ${{ github.event.issue.number }}
           body: |
             The issue title must include the name of the open-source project
+      - uses: stefanbuck/github-issue-praser@v2
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/repository-submission.yml
+      - name: Submission greetings
+        uses: peter-evans/create-or-update-comment@v1
+        with:
+          issue-number: ${{ github.event.issue.number }}
+          body: |
+            Thanks @{{github.event.issue.user.login}} for submitting ${{ steps.issue-parser.outputs.jsonString.url}}
+      
