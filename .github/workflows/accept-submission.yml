@@ -2,7 +2,7 @@ on:
   issues:
     types: [labeled]
 jobs:
-  titlePrefixCheck:
+  reviewSubmission:
     runs-on: ubuntu-latest
     steps:
       - if: contains(github.event.issue.labels.*.name, 'accepted')
@@ -11,3 +11,10 @@ jobs:
         with:
           comment: |
             Your submission have been accepted
+      - if: contains(github.event.issue.labels.*.name, 'refused')
+        name: Refuse submission
+        uses: peter-evans/close-issue@v1
+        with:
+          comment: |
+            Your submission doesn't match our requirements
+
